@@ -42,6 +42,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.resolve(__dirname, "src/templates/index.html"),
+      favicon: path.resolve(
+        __dirname,
+        "src/public/images/favicon/findresto.ico"
+      ),
     }),
     new CopyWebpackPlugin({
       patterns: [
