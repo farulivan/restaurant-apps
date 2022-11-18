@@ -1,5 +1,5 @@
 import "regenerator-runtime"; /* for async await transpile */
-import "../styles/main.css";
+import "../styles/main.scss";
 // import ".../styles/responsive.css";
 import data from "../DATA.json";
 
@@ -26,7 +26,7 @@ restaurantListElement.innerHTML = restaurants
   .join("");
 
 // -- Hamburger Nav -- //
-const menu = document.querySelector(".header__menu");
+const menu = document.querySelector(".menu");
 const main = document.querySelector("main");
 const nav = document.querySelector(".nav");
 
