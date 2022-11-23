@@ -15,12 +15,12 @@
   <title>Find Resto</title>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to Content</a>
+  <a href="#mainContent" class="skip-link">Skip to Content</a>
   <header class="header">
     <div class="header__content">
       <h2 class="logo">findresto</h2> 
-      <button class="menu" aria-label="Navigation button">☰</button>
-      <nav class="nav">
+      <button id="hamburgerButton" class="menu" aria-label="Navigation button">☰</button>
+      <nav id="navigationDrawer" class="nav">
         <ul class="nav__list">
           <li class="nav__item"><a href="/" aria-label="Navigate to Home page">Home</a></li>
           <li class="nav__item"><a href="#" aria-label="Navigate to Favorite page">Favorite</a></li>
@@ -33,13 +33,7 @@
     </div>
   </header>
   
-  <main id="main" class="main">
-    <section class="restaurant">
-      <h3 class="restaurant__label">Explore Restaurant</h3>
-      <div class="restaurant__list">
-      </div>
-    </section>
-  </main>
+  <main id="mainContent" class="main"></main>
 
   <footer class="footer">
     <p>Copyright © 2022 - Find Resto</p>
