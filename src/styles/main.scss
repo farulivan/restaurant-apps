@@ -1,4 +1,6 @@
 $primary: #6768ab;
+$secondary: #e5c3c3;
+$tertiary: #ecc478;
 $fontPrimary: #0d2432;
 $fontSecondary: #37526d;
 
@@ -24,6 +26,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.4rem;
   color: $fontPrimary;
+  background-color: $secondary;
 }
 
 /*
@@ -176,11 +179,16 @@ body {
 }
 
 .restaurant {
+  &__label {
+    color: $fontPrimary;
+  }
+
   &__item {
     display: flex;
     padding: 1.5rem;
     margin-top: 1.5rem;
     border-radius: 1rem;
+    background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
@@ -204,6 +212,10 @@ body {
   &__name {
     font-size: 1.5rem;
     font-weight: 600;
+    a {
+      text-decoration: none;
+      color: $fontPrimary;
+    }
   }
   
   &__city {
@@ -241,15 +253,209 @@ body {
 }
 
 /*
+  * Detail Header
+  */
+
+.detail {
+  h3 {
+    font-size: x-large;
+  }
+
+  h4 {
+    font-size: larger;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    font-size: larger;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  p, li {
+    color: $fontSecondary;
+  }
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    z-index: 1;
+    padding: 0 1rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    filter: brightness(30%) saturate(80%) contrast(70%);
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+  }
+
+  
+  &__rating {
+    display: flex;
+    align-items: center;
+    color: $tertiary;
+    
+    span {
+      font-size: large;
+      font-weight: 600;
+    }
+    svg {
+      margin-right: 0.5rem;
+      width: 20px;
+    }
+  }
+  
+  &__info {
+    margin: -4rem -2.5rem;
+    padding: 2.5rem;
+    background-color: white;
+    color: $fontPrimary;
+    position: relative;
+
+    .love-button {
+      position:absolute;
+      top: 2.5rem;
+      right: 1.5rem;
+      height: 45px;
+      width: 45px;
+      z-index: 2;
+      padding: 1rem;
+      background-color: $primary;
+      color:white;
+      border-radius: 100%;
+    }
+  
+    .back-button {
+      position:absolute;
+      top: 2.5rem;
+      left: 1.5rem;
+      height: 45px;
+      width: 45px;
+      z-index: 2;
+      padding: 1rem;
+      background-color: $primary;
+      color:white;
+      border-radius: 100%;
+    }
+  }
+
+  &__subhead {
+    margin-top: 6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__address {
+    display: flex;
+    align-items: center;
+
+    svg {
+      stroke: white;
+      width: 30px;
+      margin-right: 1rem;
+    }
+  }
+
+  &__category {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    svg {
+      stroke: white;
+      width: 30px;
+      margin-right: 1rem;
+    }
+
+    p {
+      padding: 0.5rem 1rem;
+      background-color: $primary;
+      color: white;
+      border-radius: 2rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__description, &__reviews, &__foods, &__drinks {
+    padding-top: 2.5rem;
+    border-top: 1px solid $secondary;
+    margin-bottom: 2.5rem;
+  }
+
+  &__reviews {
+    .review-container {
+      display: grid;
+      grid-template-columns: 1fr 6fr;
+      grid-column-gap: 1.5rem;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid $secondary;
+
+      svg {
+        height: 50px;
+        width: 50px;
+        align-self: center;
+        justify-self: center;
+      }
+
+      .review {
+        font-weight: 500;
+        font-style: italic;
+        color: $fontPrimary;
+      }
+
+      .review-name, .review-date {
+        font-size: smaller;
+      }
+  
+      span {
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+
+    .review-container:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__foods, &__drinks {
+    ul {
+      margin-left: 2rem;
+      
+      li::marker {
+        content: "⇾  ";
+        color: $primary;
+        font-weight: 500;
+      }
+    }
+  }
+}  
+
+/*
   * Footer
   *
   */
 
 .footer {
+  position: relative;
   padding: 1.5rem;
   text-align: center;
   background-color: $primary;
   color: white;
+  z-index: 2;
 }
 
 /*
