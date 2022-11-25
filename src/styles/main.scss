@@ -13,6 +13,10 @@ $heart: #ea8181;
 
 :root {
   font-size: 10px;
+  // for detail__rating
+  --star-size: 25px;
+  --star-color: #fff;
+  --star-background: #fc0;
 }
 
 body,
@@ -254,29 +258,29 @@ body {
 }
 
 /*
-  * Detail Header
+  * Detail Page
   */
 
-  .love-button {
-    position:absolute;
-    top: 47rem;
-    right: 1.5rem;
-    height: 45px;
-    width: 45px;
-    z-index: 2;
-    padding: 1rem;
-    background-color: $primary;
-    border: none;
-    border-radius: 100%;
+.love-button {
+  position:absolute;
+  top: 47rem;
+  right: 1.5rem;
+  height: 45px;
+  width: 45px;
+  z-index: 2;
+  padding: 1rem;
+  background-color: $primary;
+  border: none;
+  border-radius: 100%;
 
-    .love-o {
-      color: white;
-    }
-
-    .love {
-      color: $heart;
-    }
+  .love-o {
+    color: white;
   }
+
+  .love {
+    color: $heart;
+  }
+}
 
 .detail {
   h3 {
@@ -327,17 +331,20 @@ body {
 
   
   &__rating {
-    display: flex;
-    align-items: center;
-    color: $tertiary;
+    --percent: calc(var(--rating) / 5 * 100%);
     
-    span {
-      font-size: large;
-      font-weight: 600;
-    }
-    svg {
-      margin-right: 0.5rem;
-      width: 20px;
+    display: inline-block;
+    font-size: var(--star-size);
+    // font-family: Times; // make sure ★ appears correctly
+    line-height: 1;
+    
+    &::before {
+      content: '★★★★★';
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
   
