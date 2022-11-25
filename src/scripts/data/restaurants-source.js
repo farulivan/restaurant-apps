@@ -15,7 +15,6 @@ class RestaurantsSource {
   static async detailRestaurant(id) {
     try {
       const response = await axios.get(API_ENDPOINT.DETAIL(id));
-      console.log(response.data)
       return response.data.restaurant;
     } catch (error) {
       console.error(error);
