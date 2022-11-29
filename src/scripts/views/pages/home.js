@@ -1,5 +1,4 @@
-import RestaurantsSource from '../../data/restaurants-source';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import '../../../components/restaurant-list';
 
 const Home = {
   async render() {
@@ -7,20 +6,12 @@ const Home = {
       <div class="content">
           <section class="restaurant">
               <h3 class="restaurant__label">Explore Restaurant</h3>
-              <div class="restaurant__list"></div>
+              <restaurant-list class="restaurant__list">
+                
+              </restaurant-list>
           </section>
       </div>
   `;
-  },
-
-  async afterRender() {
-    const restaurants = await RestaurantsSource.restaurantsList();
-    const restaurantsContainer = document.querySelector('.restaurant__list');
-
-    restaurants.forEach((restaurant) => {
-      restaurantsContainer.innerHTML
-        += createRestaurantItemTemplate(restaurant);
-    });
   },
 };
 
