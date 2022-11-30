@@ -194,7 +194,12 @@ body {
     margin-top: 1.5rem;
     border-radius: 1rem;
     background-color: white;
+    cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  &__item:hover {
+    background-color: #e5e7eb;
   }
 
   &__image {
@@ -217,10 +222,6 @@ body {
   &__name {
     font-size: 1.5rem;
     font-weight: 600;
-    a {
-      text-decoration: none;
-      color: $fontPrimary;
-    }
   }
   
   &__city {
