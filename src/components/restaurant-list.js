@@ -1,10 +1,12 @@
 import CONFIG from '../scripts/globals/config';
 import RestaurantsSource from '../scripts/data/restaurants-source';
+import FavoriteRestaurantIdb from '../scripts/data/favorite-restaurant-idb';
 import './home-skeleton';
 
 class RestaurantList extends HTMLElement {
   constructor() {
     super();
+    this.page = this.getAttribute('page');
     this.isLoading = true;
     this.render();
   }
@@ -13,13 +15,24 @@ class RestaurantList extends HTMLElement {
     this._restaurants = restaurants;
   }
 
-  toggleLoading() {
-    this.isLoading = !this.isLoading;
+  stopLoading() {
+    this.isLoading = false;
   }
 
   async connectedCallback() {
-    const restaurants = await RestaurantsSource.restaurantsList().then(this.toggleLoading());
+    const allRestaurants = await RestaurantsSource.restaurantsList()
+      .then(this.stopLoading());
+    const favoriteRestaurants = await FavoriteRestaurantIdb.getAllRestaurants()
+      .then(this.stopLoading());
+    let restaurants = [];
+
     if (!this.isLoading) {
+      if (this.page === 'home') {
+        restaurants = allRestaurants;
+      }
+      if (this.page === 'love') {
+        restaurants = favoriteRestaurants;
+      }
       this.innerHTML = restaurants.map(
         ({
           id, name, pictureId, city, description, rating,
