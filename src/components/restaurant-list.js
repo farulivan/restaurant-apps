@@ -1,7 +1,6 @@
 import CONFIG from '../scripts/globals/config';
 import RestaurantsSource from '../scripts/data/restaurants-source';
 import FavoriteRestaurantIdb from '../scripts/data/favorite-restaurant-idb';
-import './list-skeleton';
 
 class RestaurantList extends HTMLElement {
   constructor() {

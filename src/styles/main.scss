@@ -262,27 +262,6 @@ body {
   * Detail Page
   */
 
-.love-button {
-  position:absolute;
-  top: 47rem;
-  right: 1.5rem;
-  height: 45px;
-  width: 45px;
-  z-index: 2;
-  padding: 1rem;
-  background-color: $primary;
-  border: none;
-  border-radius: 100%;
-
-  .love-o {
-    color: white;
-  }
-
-  .love {
-    color: $heart;
-  }
-}
-
 .detail {
   h3 {
     font-size: x-large;
@@ -336,7 +315,6 @@ body {
     
     display: inline-block;
     font-size: var(--star-size);
-    // font-family: Times; // make sure ★ appears correctly
     line-height: 1;
     
     &::before {
@@ -368,10 +346,31 @@ body {
       border: none;
       border-radius: 100%;
 
-      a {
+      svg {
         color: white;
       }
     }
+
+    .love-button {
+      position:absolute;
+      top: 2.5rem;
+      right: 1.5rem;
+      height: 45px;
+      width: 45px;
+      z-index: 2;
+      padding: 1rem;
+      background-color: $primary;
+      border: none;
+      border-radius: 100%;
+    
+      .love-o {
+        color: white;
+      }
+    
+      .love {
+        color: $heart;
+      }
+    }    
   }
 
   &__subhead {
@@ -403,7 +402,7 @@ body {
 
     p {
       padding: 0.5rem 1rem;
-      background-color: $primary;
+      background-color: rgba(103, 104, 171, 0.8);
       color: white;
       border-radius: 2rem;
       margin-right: 0.5rem;

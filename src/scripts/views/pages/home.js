@@ -1,5 +1,3 @@
-import '../../../components/restaurant-list';
-
 const Home = {
   async render() {
     return `
