@@ -7,8 +7,8 @@ class RestaurantsSource {
       const response = await axios.get(API_ENDPOINT.LIST);
       return response.data.restaurants;
     } catch (error) {
-      console.error(error);
-      return error.message;
+      console.error(error.message);
+      throw error;
     }
   }
 
@@ -17,8 +17,8 @@ class RestaurantsSource {
       const response = await axios.get(API_ENDPOINT.DETAIL(id));
       return response.data.restaurant;
     } catch (error) {
-      console.error(error);
-      return error.message;
+      console.error(error.message);
+      throw error;
     }
   }
 
