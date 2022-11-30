@@ -28,18 +28,6 @@ class RestaurantDetail extends HTMLElement {
       });
     this.restaurant = restaurantData;
 
-    // LoveButtonInitiator.init({
-    //   loveButtonContainer: document.querySelector('#loveButtonContainer'),
-    //   restaurant: {
-    //     id: this.restaurant.id,
-    //     name: this.restaurant.name,
-    //     city: this.restaurant.city,
-    //     description: this.restaurant.description,
-    //     pictureId: this.restaurant.pictureId,
-    //     rating: this.restaurant.rating,
-    //   },
-    // });
-
     if (!this.isLoading) {
       if (this.isError) {
         this.innerHTML = `

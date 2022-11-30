@@ -4,6 +4,8 @@ $tertiary: #ecc478;
 $fontPrimary: #0d2432;
 $fontSecondary: #37526d;
 $heart: #ea8181;
+$skeleton1: hsl(200, 20%, 80%);
+$skeleton2: hsl(200, 20%, 95%);
 
 * {
   padding: 0;
@@ -156,7 +158,7 @@ body {
   text-align: center;
   background-image: url("../public/images/heros/hero-image.jpg");
   background-position: center;
-  background-color: $fontSecondary;
+  background-color: $skeleton1;
   background-size: cover;
 
   display: flex;
@@ -195,11 +197,13 @@ body {
     border-radius: 1rem;
     background-color: white;
     cursor: pointer;
+    text-decoration: none;
+    color: $fontPrimary;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   &__item:hover {
-    background-color: #e5e7eb;
+    background-color: $skeleton2;
   }
 
   &__image {
@@ -210,7 +214,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-color: $fontSecondary;
+    background-color: $skeleton1;
     border-radius: 0.6rem;
   }
   
@@ -477,10 +481,10 @@ body {
 
 @keyframes skeleton-loading {
   0% {
-    background-color: hsl(200, 20%, 80%);
+    background-color: $skeleton1;
   }
   100% {
-    background-color: hsl(200, 20%, 95%);
+    background-color: $skeleton2;
   }
 }
 
