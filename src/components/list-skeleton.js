@@ -1,4 +1,4 @@
-class HomeSkeleton extends HTMLElement {
+class ListSkeleton extends HTMLElement {
   constructor() {
     super();
     this.quantity = this.getAttribute('quantity');
@@ -6,6 +6,7 @@ class HomeSkeleton extends HTMLElement {
   }
 
   render() {
+    this.innerHTML = '';
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < this.quantity; i++) {
       this.innerHTML += `
@@ -28,4 +29,4 @@ class HomeSkeleton extends HTMLElement {
   }
 }
 
-customElements.define('home-skeleton', HomeSkeleton);
+customElements.define('list-skeleton', ListSkeleton);

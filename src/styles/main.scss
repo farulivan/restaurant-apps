@@ -569,6 +569,20 @@ body {
     grid-column-gap: 2rem;
     grid-row-gap: 1.6rem;
   }
+
+  restaurant-list:has(list-skeleton) {
+    display: unset;
+    grid-template-columns: unset;
+    grid-column-gap: unset;
+    grid-row-gap: unset;
+
+    list-skeleton {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 2rem;
+      grid-row-gap: 1.6rem;
+    }
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -576,6 +590,16 @@ body {
   restaurant-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  restaurant-list:has(list-skeleton) {
+    display: unset;
+    grid-template-columns: unset;
+
+    list-skeleton {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
 }
@@ -589,9 +613,18 @@ body {
     min-height: 200px;
   }
 
-
   restaurant-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  restaurant-list:has(list-skeleton) {
+    display: unset;
+    grid-template-columns: unset;
+
+    list-skeleton {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }

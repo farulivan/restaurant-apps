@@ -1,7 +1,7 @@
 import CONFIG from '../scripts/globals/config';
 import RestaurantsSource from '../scripts/data/restaurants-source';
 import FavoriteRestaurantIdb from '../scripts/data/favorite-restaurant-idb';
-import './home-skeleton';
+import './list-skeleton';
 
 class RestaurantList extends HTMLElement {
   constructor() {
@@ -16,7 +16,7 @@ class RestaurantList extends HTMLElement {
   }
 
   stopLoading() {
-    this.isLoading = false;
+    this.isLoading = true;
   }
 
   async connectedCallback() {
@@ -54,7 +54,7 @@ class RestaurantList extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = '<home-skeleton quantity="20"><home-skeleton>';
+    this.innerHTML = '<list-skeleton quantity="20"><list-skeleton>';
   }
 }
 
