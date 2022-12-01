@@ -192,7 +192,7 @@ class RestaurantDetail extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = '<list-skeleton quantity="1"><list-skeleton>';
+    this.innerHTML = '<list-skeleton quantity="1" page="detail"><list-skeleton>';
   }
 }
 

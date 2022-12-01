@@ -80,7 +80,7 @@ class RestaurantList extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = '<list-skeleton quantity="20"><list-skeleton>';
+    this.innerHTML = '<list-skeleton quantity="20" page="home"><list-skeleton>';
   }
 }
 
