@@ -19,6 +19,16 @@ $skeleton2: hsl(200, 20%, 95%);
   --star-size: 25px;
   --star-color: #fff;
   --star-background: #fc0;
+  // for search
+  --rad: .7rem;
+  --dur: .3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: #6768ab;
+  --font-fam: 'Poppins', sans-serif;
+  --height: 4rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
 
 body,
@@ -30,7 +40,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.4rem;
   color: $fontPrimary;
   background-color: $secondary;
@@ -77,7 +87,7 @@ body {
   }
   
   .logo {
-    font-family: "Fira Sans", sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     font-size: 2rem;
   }
 
@@ -174,6 +184,90 @@ body {
     border-radius: 1rem 0 0 0;
     margin-bottom: -0.2rem;
   }
+}
+
+/*
+* Search
+*
+*/
+
+search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+
+  form {
+    position: relative;
+    width: 30rem;
+    background: var(--color-brand);
+    border-radius: var(--rad);
+  }
+
+  input, button {
+    height: var(--height);
+    font-family: var(--font-fam);
+    border: 0;
+    font-size: 1.5rem;
+  }
+
+  input {
+    color: var(--color-dark);
+  }
+
+  input[type="search"] {
+    width: 100%;
+    background: var(--color-light);
+    padding: 0 1.6rem;
+    border-radius: var(--rad);
+    appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius;
+    z-index: 1;
+    position: relative;
+  }
+
+  button {
+    display: none; // prevent being able to tab to it
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--btn-width);
+    font-weight: bold;
+    color: var(--color-light);
+    background: var(--color-brand);
+    border-radius: 0 var(--rad) var(--rad) 0;
+  }
+
+  input:not(:placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+    + button {
+      display: block;
+    }
+  }
+
+  label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+}
+
+/*
+* Keyword Not Found
+*
+*/
+
+.keyword-not-found {
+  background-color: white;
+  color: $fontPrimary;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 2rem;
 }
 
 /*

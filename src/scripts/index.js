@@ -6,6 +6,8 @@ import swRegister from './utils/sw-register';
 import '../components/restaurant-list';
 import '../components/restaurant-detail';
 import '../components/list-skeleton';
+import '../components/search-bar';
+import '../components/restaurant-search';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

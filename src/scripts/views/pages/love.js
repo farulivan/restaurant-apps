@@ -1,5 +1,3 @@
-import '../../../components/restaurant-list';
-
 const Love = {
   async render() {
     return `

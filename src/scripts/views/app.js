@@ -17,12 +17,13 @@ class App {
       drawer: this._drawer,
       content: this._content,
     });
-
-    // kita bisa menginisiasikan komponen lain bila ada
   }
 
   async renderPage() {
-    const url = UrlParser.parseActiveUrlWithCombiner();
+    let url = UrlParser.parseActiveUrlWithCombiner();
+    if (url.includes('search')) {
+      url = '/search';
+    }
     const page = routes[url];
     this._content.innerHTML = await page.render();
   }

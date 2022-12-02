@@ -23,9 +23,13 @@ class RestaurantsSource {
   }
 
   static async searchRestaurants(query) {
-    const response = await fetch(API_ENDPOINT.SEARCH(query));
-    const responseJson = await response.json();
-    return responseJson.results;
+    try {
+      const response = await axios.get(API_ENDPOINT.SEARCH(query));
+      return response.data.restaurants;
+    } catch (error) {
+      console.error(error.message);
+      throw error;
+    }
   }
 }
 
