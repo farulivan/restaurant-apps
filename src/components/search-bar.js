@@ -1,5 +1,3 @@
-// import RestaurantsSource from "../scripts/data/restaurants-source";
-
 class SearchBar extends HTMLElement {
   constructor() {
     super();

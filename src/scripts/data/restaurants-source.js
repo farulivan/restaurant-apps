@@ -31,6 +31,20 @@ class RestaurantsSource {
       throw error;
     }
   }
+
+  static async addNewReview({ id, name, review }) {
+    try {
+      const response = await axios.post(API_ENDPOINT.ADD_REVIEW, {
+        id,
+        name,
+        review,
+      });
+      return response.data.message;
+    } catch (error) {
+      console.error(error.message);
+      throw error;
+    }
+  }
 }
 
 export default RestaurantsSource;

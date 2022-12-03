@@ -8,6 +8,7 @@ import '../components/restaurant-detail';
 import '../components/list-skeleton';
 import '../components/search-bar';
 import '../components/restaurant-search';
+import '../components/add-review';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

@@ -549,7 +549,7 @@ search-bar {
     }
   }
 
-  &__description, &__reviews, &__foods, &__drinks {
+  &__description, &__reviews, &__foods, &__drinks, &__new-review {
     padding-top: 2.5rem;
     border-top: 1px solid $secondary;
     margin-bottom: 2.5rem;
@@ -590,6 +590,58 @@ search-bar {
     .review-container:last-child {
       border-bottom: none;
       padding-bottom: 0;
+    }
+  }
+
+  /*
+  * Add New Review
+  *
+  */
+
+  .add-review-form {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    width: 100%;
+
+    .add-review-container {
+      display: inline-block;
+      width: 100%;
+      margin-top: 2rem;
+
+      textarea, input {
+        margin-top: 1rem;
+        padding: 10px;
+        width: 100%;
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid $primary;
+      }
+
+      textarea {
+        height: 10rem;
+      }
+    }
+
+    .add-review-button {
+      margin-top: 1rem;
+      padding: 1rem 1.5rem;
+      background-color: $primary;
+      color: white;
+      border-radius: 1rem;
+      border: none;
+    }
+  }
+
+  .error-add-review {
+    width: 100%;
+    background-color: $heart;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    
+    p {
+      color: white;
     }
   }
 

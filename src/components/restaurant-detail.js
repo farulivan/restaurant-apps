@@ -153,6 +153,11 @@ class RestaurantDetail extends HTMLElement {
                 `).join('')}
               </div>
             </div>
+            <div class="detail__new-review">
+              <h5>Add your review</h6>
+              <p>What do you think about this resto?</p>
+              <add-review restaurant-id=${id}></add-review>
+            </div>
             <div class="detail__foods">
               <h5>Food Menu</h5>
               <div>
