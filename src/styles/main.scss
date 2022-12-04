@@ -639,7 +639,7 @@ search-bar {
     border-radius: 0.5rem;
     text-align: center;
     margin-top: 1rem;
-    
+
     p {
       color: white;
     }
@@ -821,7 +821,7 @@ search-bar {
     }
   }
   
-  restaurant-list {
+  restaurant-list, restaurant-search {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
@@ -832,7 +832,7 @@ search-bar {
     }
   }
 
-  restaurant-list:has(list-skeleton) {
+  restaurant-list:has(list-skeleton), restaurant-search:has(list-skeleton) {
     display: unset;
     grid-template-columns: unset;
     grid-column-gap: unset;
@@ -845,11 +845,26 @@ search-bar {
       grid-row-gap: 1.6rem;
     }
   }
+
+  .detail {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  .detail__head {
+    height: 300px;
+    margin: auto;
+  }
+
+  .detail__info {
+    border-radius: 1rem;
+  }
+
 }
 
 @media screen and (min-width: 900px) {
 
-  restaurant-list {
+  restaurant-list, restaurant-search {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
@@ -858,7 +873,7 @@ search-bar {
     }
   }
 
-  restaurant-list:has(list-skeleton) {
+  restaurant-list:has(list-skeleton), restaurant-search:has(list-skeleton) {
     display: unset;
     grid-template-columns: unset;
 
@@ -867,7 +882,6 @@ search-bar {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
 }
 
 @media screen and (min-width: 1200px) {
@@ -879,7 +893,7 @@ search-bar {
     min-height: 200px;
   }
 
-  restaurant-list {
+  restaurant-list, restaurant-search {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
@@ -888,7 +902,7 @@ search-bar {
     }
   }
 
-  restaurant-list:has(list-skeleton) {
+  restaurant-list:has(list-skeleton), restaurant-search:has(list-skeleton) {
     display: unset;
     grid-template-columns: unset;
 
@@ -896,5 +910,10 @@ search-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
     }
+  }
+
+  .detail__head {
+    height: 500px;
+    margin: auto;
   }
 }
