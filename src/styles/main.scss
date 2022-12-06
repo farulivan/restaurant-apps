@@ -20,7 +20,7 @@ $skeleton2: hsl(200, 20%, 95%);
   --star-color: #fff;
   --star-background: #fc0;
   // for search
-  --rad: .7rem;
+  --rad: 1rem;
   --dur: .3s;
   --color-dark: #2f2f2f;
   --color-light: #fff;
@@ -217,7 +217,7 @@ search-bar {
   input[type="search"] {
     width: 100%;
     background: var(--color-light);
-    padding: 0 1.6rem;
+    padding: 2.5rem 1.6rem;
     border-radius: var(--rad);
     appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
     transition: all var(--dur) var(--bez);
