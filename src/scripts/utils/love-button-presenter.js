@@ -1,7 +1,7 @@
 import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
-import { createLoveButtonTemplate, createLovedButtonTemplate } from '../views/templates/template-creator';
+import { createLoveRestaurantButtonTemplate, createUnloveRestaurantButtonTemplate } from '../views/templates/template-creator';
 
-const LoveButtonInitiator = {
+const LoveButtonPresenter = {
   async init({ loveButtonContainer, restaurant }) {
     this._loveButtonContainer = loveButtonContainer;
     this._restaurant = restaurant;
@@ -25,7 +25,7 @@ const LoveButtonInitiator = {
   },
 
   _renderLove() {
-    this._loveButtonContainer.innerHTML = createLoveButtonTemplate();
+    this._loveButtonContainer.innerHTML = createLoveRestaurantButtonTemplate();
 
     const loveButton = document.querySelector('#loveButton');
     loveButton.addEventListener('click', async () => {
@@ -35,7 +35,7 @@ const LoveButtonInitiator = {
   },
 
   _renderLoved() {
-    this._loveButtonContainer.innerHTML = createLovedButtonTemplate();
+    this._loveButtonContainer.innerHTML = createUnloveRestaurantButtonTemplate();
 
     const lovedButton = document.querySelector('#loveButton');
     lovedButton.addEventListener('click', async () => {
@@ -45,4 +45,4 @@ const LoveButtonInitiator = {
   },
 };
 
-export default LoveButtonInitiator;
+export default LoveButtonPresenter;

@@ -1,6 +1,6 @@
 import UrlParser from '../scripts/routes/url-parser';
 import RestaurantsSource from '../scripts/data/restaurants-source';
-import LoveButtonInitiator from '../scripts/utils/love-button-initiator';
+import LoveButtonPresenter from '../scripts/utils/love-button-presenter';
 
 class RestaurantDetail extends HTMLElement {
   constructor() {
@@ -182,7 +182,7 @@ class RestaurantDetail extends HTMLElement {
         </div>
       `;
 
-      LoveButtonInitiator.init({
+      LoveButtonPresenter.init({
         loveButtonContainer: document.querySelector('#loveButtonContainer'),
         restaurant: {
           id: this.restaurant.id,

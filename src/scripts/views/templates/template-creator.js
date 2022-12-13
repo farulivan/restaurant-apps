@@ -1,4 +1,4 @@
-const createLoveButtonTemplate = () => `
+const createLoveRestaurantButtonTemplate = () => `
   <button aria-label="love this restaurant" id="loveButton" class="love-button">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,7 @@ const createLoveButtonTemplate = () => `
   </button>
 `;
 
-const createLovedButtonTemplate = () => `
+const createUnloveRestaurantButtonTemplate = () => `
   <button aria-label="unlove this restaurant" id="loveButton" class="love-button">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +27,6 @@ const createLovedButtonTemplate = () => `
 `;
 
 export {
-  createLoveButtonTemplate,
-  createLovedButtonTemplate,
+  createLoveRestaurantButtonTemplate,
+  createUnloveRestaurantButtonTemplate,
 };
