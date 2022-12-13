@@ -1,6 +1,7 @@
 import UrlParser from '../scripts/routes/url-parser';
 import RestaurantsSource from '../scripts/data/restaurants-source';
 import LoveButtonPresenter from '../scripts/utils/love-button-presenter';
+import FavoriteRestaurantIdb from '../scripts/data/favorite-restaurant-idb';
 
 class RestaurantDetail extends HTMLElement {
   constructor() {
@@ -184,6 +185,7 @@ class RestaurantDetail extends HTMLElement {
 
       LoveButtonPresenter.init({
         loveButtonContainer: document.querySelector('#loveButtonContainer'),
+        favoriteRestaurants: FavoriteRestaurantIdb,
         restaurant: {
           id: this.restaurant.id,
           name: this.restaurant.name,
