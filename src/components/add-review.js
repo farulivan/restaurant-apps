@@ -5,7 +5,9 @@ class AddReview extends HTMLElement {
     super();
     this.render();
     this.isError = false;
+    this.isOffline = false;
     this.reviewForm = document.querySelector('.add-review-form');
+    this.offlineNote = document.querySelector('.user-offline');
     this.id = this.getAttribute('restaurant-id');
     this.name = '';
     this.review = '';
@@ -25,7 +27,25 @@ class AddReview extends HTMLElement {
     setTimeout(() => location.reload(), 3000);
   }
 
+  renderOffline() {
+    this.offlineNote.innerHTML = `
+      <p>Youre offline. Please connect to the internet to write a review.</p>
+    `;
+    this.querySelector('button').setAttribute('disabled', '');
+  }
+
   connectedCallback() {
+    // Check if user online / offline
+    if (navigator.onLine) {
+      this.isOffline = false;
+    } else {
+      this.isOffline = true;
+      this.renderOffline();
+    }
+
+    // Listen when user back online
+    window.addEventListener('online', () => this.render());
+
     this.reviewForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       this.name = event.currentTarget.name.value;
@@ -45,6 +65,7 @@ class AddReview extends HTMLElement {
   render() {
     this.innerHTML = `
       <form class="add-review-form">
+        <div class="user-offline"></div>
         <div class="add-review-container">
           <label for="name">Your name</label>
           <input id="name" type="text" name="name" placeholder="Anto" required />

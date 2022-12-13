@@ -630,6 +630,10 @@ search-bar {
       border-radius: 1rem;
       border: none;
     }
+
+    .add-review-button:disabled {
+      background-color: $skeleton1;
+    }
   }
 
   .error-add-review {
@@ -654,6 +658,17 @@ search-bar {
         color: $primary;
         font-weight: 500;
       }
+    }
+  }
+
+  .user-offline {
+    display: flex;
+    justify-content: center;
+    p {
+      background-color: #ea8181;
+      padding: 2rem;
+      border-radius: 2rem;
+      color: white;
     }
   }
 
