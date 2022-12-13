@@ -64,13 +64,13 @@ describe('Love A Restaurant', () => {
     FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  xit('should not add a restaurant when it has no id', async () => {
+  it('should not add a restaurant when it has no id', async () => {
     await LoveButtonInitiator.init({
       loveButtonContainer: document.querySelector('#loveButtonContainer'),
       restaurant: {},
     });
 
     document.querySelector('#loveButton').dispatchEvent(new Event('click'));
-    expect(await FavoriteRestaurantIdb.getAllMovies()).toEqual([]);
+    expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });
 });
