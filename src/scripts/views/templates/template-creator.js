@@ -1,5 +1,5 @@
 const createLoveRestaurantButtonTemplate = () => `
-  <button aria-label="love this restaurant" id="loveButton" class="love-button">
+  <button aria-label="love this restaurant" id="loveButton" class="love-button love-this-restaurant">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -13,7 +13,7 @@ const createLoveRestaurantButtonTemplate = () => `
 `;
 
 const createUnloveRestaurantButtonTemplate = () => `
-  <button aria-label="unlove this restaurant" id="loveButton" class="love-button">
+  <button aria-label="unlove this restaurant" id="loveButton" class="love-button unlove-this-restaurant">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
