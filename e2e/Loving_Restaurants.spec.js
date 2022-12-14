@@ -7,7 +7,7 @@ Before(({ I }) => {
 });
 
 Scenario('showing empty favorite restaurants', ({ I }) => {
-  I.seeElement('.restaurant__label');
+  I.see('Your Favorite Resto', '.restaurant__label');
   I.see('We don\'t find any restaurants in your favorite list', '.favorite-restaurant-not-found');
 });
 
