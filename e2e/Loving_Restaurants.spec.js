@@ -13,5 +13,13 @@ Scenario('loving one restaurant', ({ I }) => {
   I.see('We don\'t find any restaurants in your favorite list', '.favorite-restaurant-not-found');
 
   I.amOnPage('/');
-  // … kita akan mengisi uji coba berikutnya …
+
+  I.seeElement('.restaurant__item');
+  I.click(locate('.restaurant__item').first());
+
+  I.seeElement('#loveButton');
+  I.click('#loveButton');
+
+  I.amOnPage('/#/favorite');
+  I.seeElement('.restaurant__item');
 });

@@ -676,6 +676,8 @@ search-bar {
   .user-offline {
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
+    
     p {
       background-color: #ea8181;
       padding: 2rem;
