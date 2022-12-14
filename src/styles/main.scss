@@ -258,16 +258,28 @@ search-bar {
 }
 
 /*
-* Keyword Not Found
+* Not Found
 *
 */
 
-.keyword-not-found {
+.not__found {
   background-color: white;
-  color: $fontPrimary;
   padding: 2rem;
   margin-top: 1rem;
   border-radius: 2rem;
+  display: block;
+  text-align: center;
+
+  .title {
+    font-weight: bold;
+    color: $fontPrimary;
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    font-size: small;
+    color: $fontSecondary;
+  }
 }
 
 /*

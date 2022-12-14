@@ -52,8 +52,9 @@ class RestaurantSearch extends HTMLElement {
 
       if (this.restaurants.length === 0) {
         this.innerHTML = `
-          <div class="keyword-not-found">
-            <p>We don't find any restaurants that match your keyword. Please use another keyword.</p>
+          <div class="keyword-not-found not__found">
+            <p class="title">We don't find any restaurants that match your keyword</p>
+            <p class="subtitle">Please try to use another keyword or find the restaurant in our Home page</p>
           </div>
         `;
         return;

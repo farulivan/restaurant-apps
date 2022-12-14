@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist",
     "build-serve": "npm run build && npm run serve",
-    "test": "karma start"
+    "test": "karma start",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "farulivan <farulivan@gmail.com>",
@@ -19,6 +20,7 @@
     "axios": "^1.2.0",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
+    "codeceptjs": "^3.3.7",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.28.0",
@@ -37,6 +39,7 @@
     "karma-jasmine": "^4.0.2",
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
+    "puppeteer": "^19.4.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",

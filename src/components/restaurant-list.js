@@ -59,6 +59,18 @@ class RestaurantList extends HTMLElement {
         return;
       }
 
+      if (this.page === 'love' && this.restaurants.length === 0) {
+        this.innerHTML = `
+          <div class="favorite-restaurant-not-found not__found">
+            <p class="title">We don't find any restaurants in your favorite list</p>
+            <p class="subtitle">You can click love button on one or more restaurants in the restaurant detail page to put it in your favorite list</p>
+          </div>
+        `;
+        return;
+      }
+
+      console.log(this.restaurants.length);
+
       this.innerHTML = this.restaurants.map(
         ({
           id, name, pictureId, city, description, rating,
