@@ -89,6 +89,9 @@ module.exports = merge(common, {
       test: /\.(js|css|html|svg)$/,
     }),
     new MiniCssExtractPlugin(),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
   ],
 });
