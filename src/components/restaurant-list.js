@@ -69,8 +69,6 @@ class RestaurantList extends HTMLElement {
         return;
       }
 
-      console.log(this.restaurants.length);
-
       this.innerHTML = this.restaurants.map(
         ({
           id, name, pictureId, city, description, rating,
