@@ -65,7 +65,7 @@ class RestaurantDetail extends HTMLElement {
       this.innerHTML = `
         <div class="detail" id=${id}>
           <div class="detail__head">
-            <img class="detail__image" src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="">
+            <img class="detail__image lazyload" data-src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="">
             <div class="detail__content">
               <h3>${name}</h3>
               <div class="detail__rating" style="--rating: ${rating};" aria-label="Rating of this product is ${rating} out of 5.">

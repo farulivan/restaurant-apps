@@ -8,6 +8,8 @@ import '../components/list-skeleton';
 import '../components/search-bar';
 import '../components/restaurant-search';
 import '../components/add-review';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
