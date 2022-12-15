@@ -58,15 +58,18 @@ module.exports = merge(common, {
         },
       },
     },
+    minimize: true,
     minimizer: [
       '...',
       new CssMinimizerPlugin({
+        minify: CssMinimizerPlugin.cleanCssMinify,
         minimizerOptions: {
           preset: [
             'default',
             {
               discardComments: { removeAll: true },
             },
+            { compatibility: 'ie11,-properties.merging' },
           ],
         },
       }),
