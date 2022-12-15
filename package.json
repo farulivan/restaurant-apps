@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist",
+    "serve": "http-server dist --gzip",
     "build-serve": "npm run build && npm run serve",
     "test": "karma start",
     "e2e": "codeceptjs run --steps"
@@ -21,6 +21,7 @@
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "codeceptjs": "^3.3.7",
+    "compression-webpack-plugin": "^10.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.28.0",

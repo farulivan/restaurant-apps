@@ -4,6 +4,7 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CompressionPlugin = require('compression-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -60,6 +61,9 @@ module.exports = merge(common, {
           progressive: true,
         }),
       ],
+    }),
+    new CompressionPlugin({
+      test: /\.(js|css|html|svg)$/,
     }),
     // new BundleAnalyzerPlugin(),
   ],
