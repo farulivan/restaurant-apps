@@ -803,7 +803,7 @@ search-bar {
   */
 
 .footer {
-  position: relative;
+  position: sticky;
   padding: 1.5rem;
   text-align: center;
   background-color: $primary;

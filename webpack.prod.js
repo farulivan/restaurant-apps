@@ -5,6 +5,8 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CompressionPlugin = require('compression-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -22,6 +24,14 @@ module.exports = merge(common, {
               presets: ['@babel/preset-env'],
             },
           },
+        ],
+      },
+      {
+        test: /.s?css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
     ],
@@ -48,6 +58,19 @@ module.exports = merge(common, {
         },
       },
     },
+    minimizer: [
+      '...',
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          preset: [
+            'default',
+            {
+              discardComments: { removeAll: true },
+            },
+          ],
+        },
+      }),
+    ],
   },
   plugins: [
     new WorkboxWebpackPlugin.InjectManifest({
@@ -65,6 +88,7 @@ module.exports = merge(common, {
     new CompressionPlugin({
       test: /\.(js|css|html|svg)$/,
     }),
+    new MiniCssExtractPlugin(),
     // new BundleAnalyzerPlugin(),
   ],
 });

@@ -66,7 +66,7 @@ class RestaurantSearch extends HTMLElement {
         }) => `
           <a class="restaurant__item" id=${id} href="/#/detail/${id}">
             <div class="restaurant__image">
-                <img src="${CONFIG.BASE_IMAGE_URL}small/${pictureId}" alt="picture of ${name}" />
+                <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}small/${pictureId}" alt="picture of ${name}" />
             </div>
             <div class="restaurant__info">
                 <p class="restaurant__name">${name}</p>
